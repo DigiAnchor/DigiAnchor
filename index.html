@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>BitReach | Digital Infrastructure by Aditya Lingineni</title>
-    <meta name="description" content="BitReach, founded by Aditya Lingineni, provides hardware anchors to rural Southeast Asia. Bridging the gap between human potential and digital access.">
-    <meta name="keywords" content="BitReach, bitreach, Bit Reach, bit-reach, Aditya Lingineni, hardware non-profit, southeast asia tech, rural computer distribution, DigiAnchor">
+    <title>DigiAnchor | Digital Infrastructure by Aditya Lingineni</title>
+    <meta name="description" content="DigiAnchor, founded by Aditya Lingineni, provides hardware anchors to rural Southeast Asia. Securing human potential through technological infrastructure.">
+    <meta name="keywords" content="DigiAnchor, digianchor, Digi Anchor, Aditya Lingineni, hardware non-profit, southeast asia tech, rural computer distribution, bitreach">
 
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;500;800&family=Inter:wght@900&display=swap" rel="stylesheet">
     
@@ -72,7 +72,7 @@
         }
         .btn:hover { background: var(--accent); color: white; border-color: var(--accent); }
 
-        /* Grid Sections */
+        /* Sections */
         section { padding: 100px 5%; border-bottom: 2px solid var(--border); }
         .tag { color: var(--accent); font-weight: 800; margin-bottom: 1rem; display: block; }
         .description { font-size: 1.8rem; font-weight: 800; line-height: 1.1; max-width: 1000px; }
@@ -95,7 +95,7 @@
 <body>
 
 <nav>
-    <div class="logo">bitreach // 2026</div>
+    <div class="logo">digianchor // 2026</div>
     <div>aditya_lingineni / executive_director</div>
 </nav>
 
@@ -103,7 +103,7 @@
     <h1>hardware<br>is the<br>anchor.</h1>
     
     <div class="hero-meta">
-        <p>> reaching the rural nodes of southeast asia. bitreach deploys the physical hardware required to anchor individuals to the digital marketplace.</p>
+        <p>> reaching the rural nodes of southeast asia. digianchor deploys the physical hardware required to anchor individuals to the digital marketplace.</p>
     </div>
 
     <div class="btn-group">
@@ -113,13 +113,13 @@
     </div>
 
     <div id="form-container">
-        <h2 style="margin-top: 0; font-weight: 800;">_initiate_bit_sync</h2>
-        <form id="bit-form">
+        <h2 style="margin-top: 0; font-weight: 800;">_initiate_anchor_sync</h2>
+        <form id="anchor-form">
             <input type="hidden" id="form-type" name="type">
             <input type="text" name="name" placeholder="name / alias" required>
             <input type="email" name="email" placeholder="email_address" required>
             <textarea name="message" id="dynamic-placeholder" rows="3" placeholder="payload_details" required></textarea>
-            <button type="submit" id="submit-btn" class="btn" style="width: 100%;">transmit_to_bitreach</button>
+            <button type="submit" id="submit-btn" class="btn" style="width: 100%;">transmit_to_digianchor</button>
             <div id="status" style="margin-top:20px; display:none; font-weight: 800; color: var(--accent);"></div>
         </form>
     </div>
@@ -128,7 +128,7 @@
 <section id="genesis">
     <span class="tag">01 / GENESIS</span>
     <div class="description">
-        observed in <span style="color: var(--accent)">rural southeast asia</span>: talent without access. aditya lingineni founded bitreach to bridge the "last mile" gap between surplus gear and remote potential.
+        observed in <span style="color: var(--accent)">rural southeast asia</span>: talent without access. aditya lingineni founded digianchor to bridge the "last mile" gap between surplus gear and remote potential.
     </div>
 </section>
 
@@ -151,15 +151,14 @@
 </section>
 
 <footer>
-    <div>&copy; 2026 bitreach_infrastructure</div>
+    <div>&copy; 2026 digianchor_infrastructure</div>
     <div>status: stable // build_1.0.4</div>
 </footer>
 
 <script>
-    // Link to your verified Google Apps Script
     const scriptURL = 'https://script.google.com/macros/s/AKfycbz_U2RKo0SsKI9xLjm4djPLSm3qza9UJJaWwabMrzHMYiwcZ9ucBRqY0nR-FOc-zWUXtQ/exec';
     
-    const form = document.getElementById('bit-form');
+    const form = document.getElementById('anchor-form');
     const status = document.getElementById('status');
 
     function showForm(type) {
@@ -177,8 +176,8 @@
         
         fetch(scriptURL, { method: 'POST', body: new FormData(form)})
             .then(res => {
-                status.innerText = "success // bit_reached.";
-                status.style.color = var(--accent);
+                status.innerText = "success // anchor_synced.";
+                status.style.color = "#ff4800";
                 form.reset(); btn.disabled = false; btn.innerText = "new_transmit";
             })
             .catch(err => {
