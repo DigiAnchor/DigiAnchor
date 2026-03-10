@@ -4,163 +4,185 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>DigiAnchor | The Last Mile Circuit | Aditya Lingineni</title>
+    <title>BitReach | Digital Infrastructure by Aditya Lingineni</title>
+    <meta name="description" content="BitReach, founded by Aditya Lingineni, provides hardware anchors to rural Southeast Asia. Bridging the gap between human potential and digital access.">
+    <meta name="keywords" content="BitReach, bitreach, Bit Reach, bit-reach, Aditya Lingineni, hardware non-profit, southeast asia tech, rural computer distribution, DigiAnchor">
 
-    <meta name="description" content="DigiAnchor (The Last Mile Circuit), founded by Aditya Lingineni, provides essential hardware anchors to rural Southeast Asia. Bridging the digital divide one circuit at a time.">
-
-    <meta name="keywords" content="DigiAnchor, Digi Anchor, digianchor, digi anchor, Digi-Anchor, Digianker, Digiancher, DigiAnkor, The Last Mile Circuit, Last Mile Circuit, Aditya Lingineni, Aditya Lingineni non-profit, hardware distribution Southeast Asia, rural tech SE Asia, computer charity rural Asia">
-
-    <link rel="canonical" href="https://yourdomain.com/" />
-
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;500;800&family=Inter:wght@900&display=swap" rel="stylesheet">
+    
     <style>
         :root {
-            --bg: #050810;
-            --card-bg: rgba(15, 23, 42, 0.8);
-            --accent: #38bdf8;
-            --text-main: #f8fafc;
-            --text-dim: #94a3b8;
-            --glass-border: rgba(56, 189, 248, 0.1);
+            --bg: #ffffff;
+            --text: #000000;
+            --accent: #ff4800; /* International Orange */
+            --sub-bg: #f8f8f8;
+            --border: #000000;
         }
 
         * { box-sizing: border-box; scroll-behavior: smooth; }
 
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'JetBrains Mono', monospace;
             background-color: var(--bg);
-            background-image: radial-gradient(circle at 0% 0%, rgba(56, 189, 248, 0.05) 0%, transparent 50%);
-            color: var(--text-main); margin: 0; line-height: 1.8;
+            color: var(--text);
+            margin: 0;
+            line-height: 1.5;
+            text-transform: lowercase;
         }
 
         nav {
-            padding: 1.5rem 8%; display: flex; justify-content: space-between; align-items: center;
-            background: rgba(5, 8, 16, 0.8); backdrop-filter: blur(20px); position: sticky; top: 0; z-index: 1000;
-            border-bottom: 1px solid var(--glass-border);
+            padding: 1.5rem 5%;
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 2px solid var(--border);
+            position: sticky;
+            top: 0;
+            background: white;
+            z-index: 1000;
         }
-        .logo { font-weight: 800; font-size: 1.1rem; color: var(--accent); letter-spacing: 2px; text-transform: uppercase; }
 
-        .hero { height: 85vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 0 20px; }
-        h1 { font-size: clamp(2.5rem, 8vw, 4.5rem); font-weight: 800; margin-bottom: 1rem; letter-spacing: -3px; }
-        .hero p { max-width: 650px; font-size: 1.2rem; color: var(--text-dim); margin-bottom: 3rem; font-weight: 300; }
+        .logo { font-weight: 800; font-size: 1.2rem; letter-spacing: -1px; }
 
-        .btn-group { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; }
-        .btn { padding: 18px 36px; border-radius: 8px; font-weight: 700; cursor: pointer; border: none; transition: 0.4s; font-size: 0.85rem; letter-spacing: 1px; text-transform: uppercase; }
-        .btn-primary { background: var(--accent); color: #000; }
-        .btn-secondary { background: transparent; color: white; border: 1px solid var(--glass-border); }
-        .btn:hover { background: var(--accent); color: #000; transform: translateY(-3px); box-shadow: 0 10px 20px rgba(56, 189, 248, 0.2); }
+        /* Hero */
+        .hero { padding: 12vh 5%; border-bottom: 2px solid var(--border); }
+        h1 { 
+            font-family: 'Inter', sans-serif;
+            font-size: clamp(3rem, 14vw, 10rem); 
+            line-height: 0.8; 
+            margin: 0; 
+            letter-spacing: -0.06em;
+            text-transform: uppercase;
+        }
 
-        section { padding: 120px 10%; border-top: 1px solid var(--glass-border); }
-        .section-tag { color: var(--accent); text-transform: uppercase; font-weight: 800; font-size: 0.7rem; letter-spacing: 4px; margin-bottom: 20px; display: block; }
-        
-        .content-box { background: var(--card-bg); padding: 4rem; border-radius: 20px; border: 1px solid var(--glass-border); position: relative; }
-        .highlight { color: var(--accent); font-weight: 600; }
+        .hero-meta { margin-top: 4rem; max-width: 750px; font-weight: 500; color: #444; }
 
+        /* System Buttons */
+        .btn-group { display: flex; gap: 10px; margin-top: 3rem; }
+        .btn {
+            padding: 1.2rem 3.5rem;
+            border: 2px solid var(--border);
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 800;
+            transition: 0.2s;
+            background: transparent;
+            cursor: pointer;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+        }
+        .btn:hover { background: var(--accent); color: white; border-color: var(--accent); }
+
+        /* Grid Sections */
+        section { padding: 100px 5%; border-bottom: 2px solid var(--border); }
+        .tag { color: var(--accent); font-weight: 800; margin-bottom: 1rem; display: block; }
+        .description { font-size: 1.8rem; font-weight: 800; line-height: 1.1; max-width: 1000px; }
+
+        /* Deployment Form Overlay */
         #form-container {
-            display: none; background: var(--card-bg); padding: 4rem; border-radius: 20px;
-            border: 1px solid var(--accent); max-width: 700px; margin: 40px auto;
+            display: none; background: var(--sub-bg);
+            padding: 5rem 5%; border-top: 2px solid var(--border);
         }
         input, textarea {
-            width: 100%; background: #0a0f1d; border: 1px solid var(--glass-border);
-            padding: 18px; border-radius: 5px; color: white; margin-bottom: 25px; font-family: inherit;
+            width: 100%; border: none; border-bottom: 2px solid var(--border);
+            background: transparent; padding: 1rem 0; color: black;
+            font-family: inherit; margin-bottom: 2rem; outline: none;
+            font-size: 1.2rem;
         }
 
-        footer { text-align: center; color: var(--text-dim); padding: 5rem; border-top: 1px solid var(--glass-border); font-size: 0.8rem; letter-spacing: 1px; }
+        footer { padding: 5rem 5%; display: flex; justify-content: space-between; font-weight: 800; font-size: 0.8rem; }
     </style>
 </head>
 <body>
 
 <nav>
-    <div class="logo">THE LAST MILE CIRCUIT / DIGIANCHOR</div>
-    <div class="nav-links">
-        <a href="#origin" style="color: var(--text-dim); text-decoration: none; font-size: 0.75rem; font-weight: 700;">STRATEGY</a>
-    </div>
+    <div class="logo">bitreach // 2026</div>
+    <div>aditya_lingineni / executive_director</div>
 </nav>
 
 <div class="hero">
-    <span class="section-tag">Infrastructure Deployment</span>
-    <h1>Solving the Last Mile.</h1>
-    <p>Deploying essential hardware anchors to remote Southeast Asian provinces to bridge the global digital divide.</p>
+    <h1>hardware<br>is the<br>anchor.</h1>
     
+    <div class="hero-meta">
+        <p>> reaching the rural nodes of southeast asia. bitreach deploys the physical hardware required to anchor individuals to the digital marketplace.</p>
+    </div>
+
     <div class="btn-group">
-        <button class="btn btn-primary" onclick="showForm('Request')">Application</button>
-        <button class="btn btn-secondary" onclick="showForm('Donor')">Donate Gear</button>
-        <button class="btn btn-secondary" onclick="showForm('Volunteer')">Join Team</button>
+        <button class="btn" onclick="showForm('request')">request</button>
+        <button class="btn" onclick="showForm('donor')">donate</button>
+        <button class="btn" onclick="showForm('volunteer')">squad</button>
     </div>
 
     <div id="form-container">
-        <h2 id="form-title" style="margin-top: 0; color: var(--accent);">Registry</h2>
-        <form id="lmc-form">
+        <h2 style="margin-top: 0; font-weight: 800;">_initiate_bit_sync</h2>
+        <form id="bit-form">
             <input type="hidden" id="form-type" name="type">
-            <input type="text" name="name" placeholder="Full Name" required>
-            <input type="email" name="email" placeholder="Email Address" required>
-            <textarea name="message" id="dynamic-placeholder" rows="5" placeholder="Details" required></textarea>
-            <button type="submit" id="submit-btn" class="btn btn-primary" style="width: 100%;">Submit Entry</button>
-            <div id="status" style="margin-top:20px; display:none; text-align:center;"></div>
+            <input type="text" name="name" placeholder="name / alias" required>
+            <input type="email" name="email" placeholder="email_address" required>
+            <textarea name="message" id="dynamic-placeholder" rows="3" placeholder="payload_details" required></textarea>
+            <button type="submit" id="submit-btn" class="btn" style="width: 100%;">transmit_to_bitreach</button>
+            <div id="status" style="margin-top:20px; display:none; font-weight: 800; color: var(--accent);"></div>
         </form>
     </div>
 </div>
 
-<section id="origin">
-    <div class="content-box">
-        <span class="section-tag">Observation</span>
-        <h2>A Regional Disconnect</h2>
-        <p style="max-width: 850px; font-size: 1.1rem; color: var(--text-dim);">
-            While traversing <span class="highlight">rural Southeast Asia</span>, founder <span class="highlight">Aditya Lingineni</span> witnessed a systemic decoupling. Remote provinces were being left without the foundational tools of modern life.
-        </p>
-        <p style="max-width: 850px; font-size: 1.1rem; color: var(--text-dim);">
-            Whether you call us <strong>DigiAnchor</strong> or <strong>The Last Mile Circuit</strong>, our mission is the same: providing the hardware anchors necessary for human advancement.
-        </p>
+<section id="genesis">
+    <span class="tag">01 / GENESIS</span>
+    <div class="description">
+        observed in <span style="color: var(--accent)">rural southeast asia</span>: talent without access. aditya lingineni founded bitreach to bridge the "last mile" gap between surplus gear and remote potential.
     </div>
 </section>
 
 
 
-<section id="reach">
-    <span class="section-tag">Targeting</span>
-    <h2>Southeast Asia Strategy</h2>
-    <p style="max-width: 700px; color: var(--text-dim);">We navigate the complex logistics of rural terrain to ensure talent is matched with the hardware they deserve.</p>
-</section>
-
-<section id="leadership">
-    <span class="section-tag">Executive Director</span>
-    <h2>Aditya Lingineni</h2>
-    <p style="max-width: 750px; color: var(--text-dim);">
-        Aditya coordinates the global supply chain, ensuring that surplus technology is redirected from corporate centers to the most remote edges of the network.
-    </p>
+<section id="objective">
+    <span class="tag">02 / SPECS</span>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 50px;">
+        <div>
+            <p style="font-weight: 800;">// target_regions</p>
+            <p>rural_provinces_asia</p>
+            <p>underserved_nodes</p>
+        </div>
+        <div>
+            <p style="font-weight: 800;">// benchmarks_2026</p>
+            <p>500_hardware_deployments</p>
+            <p>100%_data_sanitization</p>
+        </div>
+    </div>
 </section>
 
 <footer>
-    <p>&copy; 2026 THE LAST MILE CIRCUIT (DIGIANCHOR) | FOUNDED BY ADITYA LINGINENI</p>
+    <div>&copy; 2026 bitreach_infrastructure</div>
+    <div>status: stable // build_1.0.4</div>
 </footer>
 
 <script>
+    // Link to your verified Google Apps Script
     const scriptURL = 'https://script.google.com/macros/s/AKfycbz_U2RKo0SsKI9xLjm4djPLSm3qza9UJJaWwabMrzHMYiwcZ9ucBRqY0nR-FOc-zWUXtQ/exec';
     
-    const form = document.getElementById('lmc-form');
+    const form = document.getElementById('bit-form');
     const status = document.getElementById('status');
 
     function showForm(type) {
         document.getElementById('form-container').style.display = 'block';
-        document.getElementById('form-title').innerText = type + " Portal";
         document.getElementById('form-type').value = type;
-        window.scrollTo({ top: document.getElementById('form-container').offsetTop - 50, behavior: 'smooth' });
+        document.getElementById('dynamic-placeholder').placeholder = "input_" + type + "_payload";
+        window.scrollTo({ top: document.getElementById('form-container').offsetTop - 100, behavior: 'smooth' });
     }
 
     form.addEventListener('submit', e => {
         e.preventDefault();
         const btn = document.getElementById('submit-btn');
-        btn.disabled = true; btn.innerText = "Transmitting...";
-        status.style.display = "block"; status.innerText = "Synchronizing with Registry...";
+        btn.disabled = true; btn.innerText = "transmitting...";
+        status.style.display = "block"; status.innerText = "syncing_with_registry...";
         
         fetch(scriptURL, { method: 'POST', body: new FormData(form)})
             .then(res => {
-                status.innerText = "Registry Updated. Aditya will be in contact.";
-                status.style.color = "#4ade80";
-                form.reset(); btn.disabled = false; btn.innerText = "Submit New Entry";
+                status.innerText = "success // bit_reached.";
+                status.style.color = var(--accent);
+                form.reset(); btn.disabled = false; btn.innerText = "new_transmit";
             })
             .catch(err => {
-                status.innerText = "Error syncing with registry.";
-                status.style.color = "#f87171";
+                status.innerText = "error // signal_loss.";
                 btn.disabled = false;
             });
     });
