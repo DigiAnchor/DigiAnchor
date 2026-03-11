@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="logo.png">
     
-    <title>DigiAnchor | Digital Equity & Global Impact</title>
+    <title>DigiAnchor | Digital Equality & Global Impact</title>
     <meta name="description" content="DigiAnchor, led by Aditya Lingineni, provides hardware anchors to rural Southeast Asia to bridge the digital divide.">
-    <meta name="keywords" content="DigiAnchor, Aditya Lingineni, Digital Equity, Southeast Asia Non-profit, Hardware Distribution">
-
+    
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    
     <style>
         :root {
             --bg: #0b0f1a;
@@ -39,7 +39,8 @@
         .nav-links a { color: var(--text-dim); text-decoration: none; margin-left: 2rem; font-size: 0.85rem; font-weight: 600; transition: 0.3s; }
         .nav-links a:hover { color: var(--accent); }
 
-        .hero { height: 85vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 0 20px; }
+        /* Hero */
+        .hero { min-height: 85vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 60px 20px; }
         h1 { font-size: clamp(2.8rem, 9vw, 5rem); font-weight: 800; margin-bottom: 1.5rem; letter-spacing: -3px; line-height: 1; }
         .hero p { max-width: 750px; font-size: 1.25rem; color: var(--text-dim); margin-bottom: 3.5rem; font-weight: 300; }
 
@@ -49,6 +50,28 @@
         .btn-secondary { background: var(--card-bg); color: white; border: 1px solid var(--glass-border); }
         .btn:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(56, 189, 248, 0.25); }
 
+        /* Form Container */
+        #form-container {
+            display: none; background: var(--card-bg); padding: 3rem; border-radius: 32px;
+            border: 1px solid var(--accent); max-width: 800px; width: 95%; margin: 40px auto; backdrop-filter: blur(20px);
+        }
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+        .full-width { grid-column: 1 / -1; }
+        label { display: block; color: var(--accent); font-size: 0.75rem; font-weight: 800; text-transform: uppercase; margin-bottom: 8px; letter-spacing: 1px; }
+        
+        input, textarea {
+            width: 100%; background: #0f172a; border: 1px solid var(--glass-border);
+            padding: 15px; border-radius: 12px; color: white; margin-bottom: 5px; font-family: inherit;
+        }
+        input:focus, textarea:focus { border-color: var(--accent); outline: none; }
+
+        /* Sections */
         section { padding: 120px 10%; border-top: 1px solid var(--glass-border); }
         .section-tag { color: var(--accent); text-transform: uppercase; font-weight: 800; font-size: 0.8rem; letter-spacing: 3px; margin-bottom: 15px; display: block; }
         h2 { font-size: clamp(2rem, 5vw, 3rem); margin-top: 0; letter-spacing: -1px; }
@@ -60,125 +83,21 @@
 
         .story-box { background: var(--card-bg); padding: 4rem; border-radius: 40px; border: 1px solid var(--glass-border); }
 
-        #form-container {
-            display: none; background: var(--card-bg); padding: 4rem; border-radius: 32px;
-            border: 1px solid var(--accent); max-width: 700px; margin: 40px auto; backdrop-filter: blur(20px);
-        }
-        input, textarea {
-            width: 100%; background: #0f172a; border: 1px solid var(--glass-border);
-            padding: 18px; border-radius: 12px; color: white; margin-bottom: 25px; font-family: inherit;
-        }
+        /* Team Cards */
+        .team-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 30px; margin-top: 50px; align-items: start; }
+        .team-item { background: rgba(56, 189, 248, 0.15); border: 1px solid rgba(56, 189, 248, 0.4); border-radius: 16px; padding: 1.2rem; transition: transform 0.3s, box-shadow 0.3s; }
+        .team-item:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(56, 189, 248, 0.2); }
+        .team-img-wrap { overflow: hidden; border-radius: 10px; height: 280px; background: rgba(11, 15, 26, 0.8); display: flex; align-items: center; justify-content: center; }
+        .team-avatar-placeholder { font-size: 5rem; line-height: 1; }
+        .team-socials { display: flex; justify-content: center; gap: 6px; margin-top: -18px; position: relative; z-index: 2; padding-bottom: 6px; }
+        .team-socials a { width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; background: var(--accent); color: #000; border-radius: 6px; font-size: 0.85rem; text-decoration: none; transition: background 0.2s, transform 0.2s; box-shadow: 0 2px 8px rgba(0,0,0,0.4); }
+        .team-socials a:hover { background: #fff; transform: translateY(-3px); }
+        .team-info { padding: 10px 4px 4px; }
+        .team-info .team-name { color: #fff; font-size: 1.1rem; font-weight: 700; margin: 0 0 4px; text-align: center; }
+        .team-info .team-role { color: var(--accent); font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; text-align: center; margin-bottom: 10px; }
+        .team-info p { color: var(--text-dim); font-size: 0.88rem; line-height: 1.6; margin: 0; }
 
         footer { text-align: center; color: var(--text-dim); padding: 5rem; border-top: 1px solid var(--glass-border); }
-
-        /* ── Team Cards ── */
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
-            align-items: start;
-        }
-
-        .team-item {
-            background: rgba(56, 189, 248, 0.15);
-            border: 1px solid rgba(56, 189, 248, 0.4);
-            border-radius: 16px;
-            padding: 1.2rem;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .team-item:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(56, 189, 248, 0.2);
-        }
-
-        .team-img-wrap {
-            overflow: hidden;
-            border-radius: 10px;
-            height: 280px;
-            background: rgba(11, 15, 26, 0.8);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .team-img-wrap img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.4s;
-            display: block;
-        }
-
-        .team-item:hover .team-img-wrap img {
-            transform: scale(1.06);
-        }
-
-        .team-avatar-placeholder {
-            font-size: 5rem;
-            line-height: 1;
-        }
-
-        /* social bar sits just below the photo, pulled up slightly */
-        .team-socials {
-            display: flex;
-            justify-content: center;
-            gap: 6px;
-            margin-top: -18px;
-            position: relative;
-            z-index: 2;
-            padding-bottom: 6px;
-        }
-
-        .team-socials a {
-            width: 36px;
-            height: 36px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: var(--accent);
-            color: #000;
-            border-radius: 6px;
-            font-size: 0.85rem;
-            text-decoration: none;
-            transition: background 0.2s, transform 0.2s;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.4);
-        }
-
-        .team-socials a:hover {
-            background: #fff;
-            transform: translateY(-3px);
-        }
-
-        .team-info {
-            padding: 10px 4px 4px;
-        }
-
-        .team-info .team-name {
-            color: #fff;
-            font-size: 1.1rem;
-            font-weight: 700;
-            margin: 0 0 4px;
-            text-align: center;
-        }
-
-        .team-info .team-role {
-            color: var(--accent);
-            font-size: 0.75rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            text-align: center;
-            margin-bottom: 10px;
-        }
-
-        .team-info p {
-            color: var(--text-dim);
-            font-size: 0.88rem;
-            line-height: 1.6;
-            margin: 0;
-        }
     </style>
 </head>
 <body>
@@ -207,10 +126,47 @@
         <h2 id="form-title" style="margin-top: 0; color: var(--accent);">Registry</h2>
         <form id="digi-anchor-form">
             <input type="hidden" id="form-type" name="type">
-            <input type="text" name="name" placeholder="Full Name" required>
-            <input type="email" name="email" placeholder="Professional Email" required>
-            <textarea name="message" id="dynamic-placeholder" rows="5" placeholder="Details" required></textarea>
-            <button type="submit" id="submit-btn" class="btn btn-primary" style="width: 100%;">Submit Formal Request</button>
+            
+            <div class="form-grid">
+                <div class="full-width">
+                    <label>Full Name</label>
+                    <input type="text" name="name" placeholder="Full Name" required>
+                </div>
+                <div>
+                    <label>Email Address</label>
+                    <input type="email" name="email" placeholder="Email" required>
+                </div>
+                <div>
+                    <label>Phone Number</label>
+                    <input type="tel" name="phone" placeholder="Phone" required>
+                </div>
+                <div>
+                    <label>Age</label>
+                    <input type="number" name="age" placeholder="Age">
+                </div>
+                <div>
+                    <label>City</label>
+                    <input type="text" name="city" placeholder="City" required>
+                </div>
+                <div class="full-width">
+                    <label>Street Address</label>
+                    <input type="text" name="address" placeholder="Street Address" required>
+                </div>
+                <div>
+                    <label>Zip / Postal Code</label>
+                    <input type="text" name="zip" placeholder="Zip" required>
+                </div>
+                <div>
+                    <label>Country</label>
+                    <input type="text" name="country" placeholder="Country" required>
+                </div>
+                <div class="full-width">
+                    <label>Requirements / Details</label>
+                    <textarea name="message" id="dynamic-placeholder" rows="4" placeholder="Details" required></textarea>
+                </div>
+            </div>
+
+            <button type="submit" id="submit-btn" class="btn btn-primary" style="width: 100%;">Submit to Global Registry</button>
             <div id="status" style="margin-top:20px; display:none; text-align:center;"></div>
         </form>
     </div>
@@ -240,25 +196,20 @@
         <span class="section-tag">The Genesis</span>
         <h2>Our Origin Story</h2>
         <p>The concept for <strong>DigiAnchor</strong> was forged during founder <strong>Aditya Lingineni’s</strong> travels through <strong>rural Southeast Asia</strong>. While navigating these provinces, he observed a staggering disparity: talent was abundant, but access was nonexistent.</p>
-        <p>Witnessing lives falling behind the global curve sparked a mission to provide the hardware anchors that make participation in the modern world possible.</p>
     </div>
 </section>
 
 <section id="reach">
     <span class="section-tag">Impact</span>
     <h2>Global Reach</h2>
-    <p style="max-width: 650px; color: var(--text-dim); margin-bottom: 50px;">Digital poverty is a borderless issue. We are targeting high-need regions in Southeast Asia and beyond to close the gap.</p>
-    
-    
-
     <div class="grid">
         <div class="card" style="text-align:center;">
             <h3>85%</h3>
-            <p>Targeted increase in digital literacy among recipients.</p>
+            <p>Targeted increase in digital literacy.</p>
         </div>
         <div class="card" style="text-align:center;">
             <h3>500+</h3>
-            <p>Annual device distribution goal for 2026.</p>
+            <p>Annual device distribution goal.</p>
         </div>
     </div>
 </section>
@@ -266,81 +217,19 @@
 <section id="team">
     <span class="section-tag">Leadership</span>
     <h2>Meet the Team</h2>
-
     <div class="team-grid">
-
-        <!-- Aditya Lingineni -->
         <div class="team-item">
-            <div class="team-img-wrap">
-                <div class="team-avatar-placeholder">⚓</div>
-            </div>
+            <div class="team-img-wrap"><div class="team-avatar-placeholder">⚓</div></div>
             <div class="team-socials">
-                <a href="https://www.linkedin.com/in/aditya-lingineni/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                <a href="https://www.instagram.com/digianchor/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/aditya-lingineni/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.instagram.com/digianchor/" target="_blank"><i class="fab fa-instagram"></i></a>
             </div>
             <div class="team-info">
-                <div style="text-align:center;">
-                    <h5 class="team-name">Aditya Lingineni</h5>
-                    <p class="team-role">Founder &amp; Executive Director</p>
-                </div>
-                <p>Aditya leads the strategic vision, leveraging insights from global travel through rural Southeast Asia to coordinate professional-grade hardware distribution for the underserved.</p>
+                <h5 class="team-name">Aditya Lingineni</h5>
+                <p class="team-role">Founder & Executive Director</p>
+                <p>Aditya leads the strategic vision, coordinating hardware distribution for the underserved across rural SE Asia.</p>
             </div>
         </div>
-
-        <!-- Placeholder 2 -->
-        <div class="team-item">
-            <div class="team-img-wrap">
-                <div class="team-avatar-placeholder">👤</div>
-            </div>
-            <div class="team-socials">
-                <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
-            </div>
-            <div class="team-info">
-                <div style="text-align:center;">
-                    <h5 class="team-name">Team Member</h5>
-                    <p class="team-role">Operations Director</p>
-                </div>
-                <p>Bio coming soon. This team member plays a key role in coordinating logistics and on-the-ground operations across our target regions.</p>
-            </div>
-        </div>
-
-        <!-- Placeholder 3 -->
-        <div class="team-item">
-            <div class="team-img-wrap">
-                <div class="team-avatar-placeholder">👤</div>
-            </div>
-            <div class="team-socials">
-                <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
-            </div>
-            <div class="team-info">
-                <div style="text-align:center;">
-                    <h5 class="team-name">Team Member</h5>
-                    <p class="team-role">Partnerships Lead</p>
-                </div>
-                <p>Bio coming soon. This team member drives donor and partner relationships to expand DigiAnchor's hardware pipeline and global reach.</p>
-            </div>
-        </div>
-
-        <!-- Placeholder 4 -->
-        <div class="team-item">
-            <div class="team-img-wrap">
-                <div class="team-avatar-placeholder">👤</div>
-            </div>
-            <div class="team-socials">
-                <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
-            </div>
-            <div class="team-info">
-                <div style="text-align:center;">
-                    <h5 class="team-name">Team Member</h5>
-                    <p class="team-role">Community Outreach</p>
-                </div>
-                <p>Bio coming soon. This team member builds relationships with local communities to ensure hardware distribution reaches those who need it most.</p>
-            </div>
-        </div>
-
     </div>
 </section>
 
@@ -349,7 +238,7 @@
 </footer>
 
 <script>
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbz_U2RKo0SsKI9xLjm4djPLSm3qza9UJJaWwabMrzHMYiwcZ9ucBRqY0nR-FOc-zWUXtQ/exec';
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbwHLhzYHVy4ZZ2GvYRJHBCwb2rkOyXmToeLz7HdVzZUsu1a0GPCpXaednQwP_WyEnjILQ/exec';
     const form = document.getElementById('digi-anchor-form');
     const status = document.getElementById('status');
 
@@ -364,11 +253,11 @@
         e.preventDefault();
         const btn = document.getElementById('submit-btn');
         btn.disabled = true; btn.innerText = "Transmitting...";
-        status.style.display = "block"; status.innerText = "Syncing with registry...";
+        status.style.display = "block"; status.innerText = "Syncing with global registry...";
         
         fetch(scriptURL, { method: 'POST', body: new FormData(form)})
             .then(res => {
-                status.innerText = "Success! Aditya will review your entry shortly.";
+                status.innerText = "Success! The anchor has been dropped.";
                 status.style.color = "#4ade80";
                 form.reset(); btn.disabled = false; btn.innerText = "Submit New Entry";
             })
